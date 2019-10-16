@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript">
+		
+		function fun1(x){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = y+x;
+		}
+		function funAdd(){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = y+ "+"; 
+		}
+		function funSub(){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = y+ "-";
+		}
+		function funMul(){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = y+ "*";
+		}
+		function funDiv(){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = y+ "/";
+			}
+		function funC(){
+			document.getElementById("calDis").value = "";
+		}
+		function funEq(){
+			var y = document.getElementById("calDis").value;
+			document.getElementById("calDis").value = eval(y);
+			var lBrk = document.createElement("br");
+			document.getElementById("history").append(lBrk+y+"="+document.getElementById("calDis").value);
+		}
+		function funBs(){
+			var x = document.getElementById("calDis").value;
+    		document.getElementById("calDis").value = x.substring(0, x.length - 1);
+		}
+	</script>
+	<style type="text/css">
+		table{
+			width: 300px;
+			border: solid;
+			border-color: grey;
+			border-width: 3px;
+			border-radius: 5px;
+		}
+		.fwid{
+			width: 100%;
+		}
+		input{
+			height: 50px;
+			font-size: 30px;
+		}
+		button{
+			height: 50px;
+			font-size: 30px;
+		}
+		td{
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td colspan="4" style="padding: 5px;">
+				<input type="text" name="" id="calDis" class="fwid" readonly="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="num1" class="fwid" onclick="fun1('1')">1</button>
+			</td>
+			<td>
+				<button id="num2" class="fwid" onclick="fun1('2')">2</button>
+			</td>
+			<td>
+				<button id="num3" class="fwid" onclick="fun1('3')">3</button>
+			</td>
+			<td>
+				<button id="add" class="fwid" onclick="funAdd()">+</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="num4" class="fwid" onclick="fun1('4')">4</button>
+			</td>
+			<td>
+				<button id="num5" class="fwid" onclick="fun1('5')">5</button>
+			</td>
+			<td>
+				<button id="num6" class="fwid" onclick="fun1('6')">6</button>
+			</td>
+			<td>
+				<button id="sub" class="fwid" onclick="funSub()">-</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="num7" class="fwid" onclick="fun1('7')">7</button>
+			</td>
+			<td>
+				<button id="num8" class="fwid" onclick="fun1('8')">8</button>
+			</td>
+			<td>
+				<button id="num9" class="fwid" onclick="fun1('9')">9</button>
+			</td>
+			<td>
+				<button id="mul" class="fwid" onclick="funMul()">x</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button id="clr" class="fwid" onclick="funC()">C</button>
+			</td>
+			<td>
+				<button id="num0" class="fwid" onclick="fun1('0')">0</button>
+			</td>
+			
+			<td>
+				<button id="res" class="fwid" onclick="funEq()">=</button>
+			</td>
+			<td>
+				<button id="divsn" class="fwid" onclick="funDiv()">/</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<button class="fwid" onclick="funBs()"><=</button>
+			</td>
+			<td>
+				<button class="fwid" onclick="fun1('.')">.</button>
+			</td>
+			<td>
+				<button class="fwid" onclick="fun1('(')">(</button>
+			</td>
+			<td>
+				<button class="fwid" onclick="fun1(')')">)</button>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<b>HISTORY</b>
+	<p id="history"></p>
+</body>
+</html>
